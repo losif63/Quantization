@@ -38,4 +38,22 @@ Also, as usual, [PyTorch](https://pytorch.org/) and CUDAToolkit is required as w
 
 ## Usage
 
+The utilities included in this library can be used in the following manner.
 
+```python
+import torch
+import quantize.fp8 as fp8
+import quantize.msfp as msfp
+
+x = torch.randn((16, 32), dtype=torch.float32)
+y = torch.randn((16, 32), dtype=torch.float32)
+
+x_84, x_85 = x.to(torch.float8_e4m3fn), x.to(torch.float8_e5m2)
+y_84, y_85 = y.to(torch.float8_e4m3fn), y.to(torch.float8_e5m2)
+fp8.fp8e4m3_matmul(x_84, y_84.transpose(0, 1))
+fp8.fp8e5m2_matmul(x_85, y_85.transpose(0, 1))
+
+x_msfp = msfp.fp32_to_msfp16(x)
+y_msfp = msfp.fp32_to_msfp16(y)
+msfp.msfp16_matmul(x_msfp, y_msfp.transpose(0, 1))
+```
