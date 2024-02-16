@@ -10,6 +10,15 @@ A custom tensor quantization library featuring various precision formats
 
 ## Introduction
 
-## Feature
+
+
+## Features
+
+The following list summarizes the overall features of this library.
+
+- MSFP
+- Float8 precision format (E4M3, E5M2)
 
 ## Usage
+
+

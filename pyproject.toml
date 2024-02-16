@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Quantization"
+version = "0.0.1"
+authors = [
+  { name="Jaduk Suh", email="jaduksuh@kaist.ac.kr" },
+]
+description = "A custom tensor quantization library featuring various precision formats"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Environment :: GPU :: NVIDIA CUDA",
+]
+
+[project.urls]
+Homepage = "https://github.com/losif63/Quantization"
+Issues = "https://github.com/losif63/Quantization/issues"
